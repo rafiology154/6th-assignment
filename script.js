@@ -29,19 +29,7 @@ const addchart = (item) => {
        
     };
 
-    const alertBox = document.createElement("div");
-    alertBox.setAttribute("role", "alert");
-    alertBox.className = "fixed top-5 right-5 bg-white border border-green-400 text-green-700 px-4 py-3 rounded flex items-center gap-2 shadow-lg z-50";
-    alertBox.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span class="font-bold"> "${item.name}" has been added to cart!</span>
-    `;
-    document.body.appendChild(alertBox);
-    setTimeout(() => {
-        document.body.removeChild(alertBox);
-    }, 1000);
+  alert(`${item.name} has been added to cart!`);
 };
 
 fetch("https://openapi.programming-hero.com/api/categories")
