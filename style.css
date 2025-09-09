@@ -1,2 +1,7 @@
 
 @import "tailwindcss";
+      .active{
+            background-color: #15803D;
+            color: white;
+            border-radius: 0.5rem;
+        }
