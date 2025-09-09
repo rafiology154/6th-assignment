@@ -12,7 +12,7 @@ const addchart = (item) => {
             <p class="font-light">ট ${item.price} X 1</p>
         </div>
         <div class="flex items-center">
-            <button class="cross h-[30px] w-[30px] bg-[#15803D] text-white px-2 rounded-4xl hover:bg-red-700">X</button>
+            <button class="cross text-red-600 h-[30px] w-[30px]  ">X</button>
         </div>
       </div>
     `;
@@ -80,7 +80,7 @@ const displaycategory = (categories) => {
     categories.forEach(category => {
         let box = document.createElement('div');
         box.innerHTML = `
-            <div class="py-2 pl-2 mb-2 hover:cursor-pointer hover:font-bold md:hover:border-2  border-[#15803D] rounded-2xl md:border-0 m-2 md:my-1 duration-300">
+            <div class="py-2 pl-2  hover:bg-green-600 hover:cursor-pointer hover:font-bold  hover: border-green-600 md:hover:green-600  md:border-0 m-2 md:my-1 duration-300">
                 <p class="">${category.category_name}</p>
             </div>
         `;
