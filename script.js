@@ -1,7 +1,5 @@
-
 const showSpinner = () => document.getElementById("spinner").classList.remove("hidden");
 const hideSpinner = () => document.getElementById("spinner").classList.add("hidden");
-
 let totalCost = 0;
 
 const addchart = (item) => {
@@ -28,19 +26,7 @@ const addchart = (item) => {
         totalCost -= item.price;
         document.getElementById("tk").innerText = totalCost;
         cartContainer.removeChild(cartitem);
-        const alertBox = document.createElement("div");
-        alertBox.setAttribute("role", "alert");
-        alertBox.className = "fixed top-5 right-5 bg-white border border-red-400 text-red-500 px-4 py-3 rounded flex items-center gap-2 shadow-lg z-50";
-        alertBox.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <span class="font-bold"> "${item.name}" has been removed from cart!</span>
-        `;
-        document.body.appendChild(alertBox);
-        setTimeout(() => {
-            document.body.removeChild(alertBox);
-        }, 1000);
+       
     };
 
     const alertBox = document.createElement("div");
@@ -94,7 +80,7 @@ const displaycategory = (categories) => {
     categories.forEach(category => {
         let box = document.createElement('div');
         box.innerHTML = `
-            <div class="py-2 pl-2 mb-2 hover:cursor-pointer hover:font-bold md:hover:border-2  border-2 border-[#15803D] rounded-2xl md:border-0 m-2 md:my-1 duration-300">
+            <div class="py-2 pl-2 mb-2 hover:cursor-pointer hover:font-bold md:hover:border-2  border-[#15803D] rounded-2xl md:border-0 m-2 md:my-1 duration-300">
                 <p class="">${category.category_name}</p>
             </div>
         `;
@@ -136,8 +122,8 @@ const displaycatitems = (data) => {
     const baxo = document.getElementById("catcenter");
     baxo.innerHTML = "";
     data.forEach(item => {
-        let dibba = document.createElement('div');
-        dibba.innerHTML = `
+        let bhai = document.createElement('div');
+        bhai.innerHTML = `
           <div class="h-[350px] bg-white p-2 flex flex-col hover:shadow-lg hover:scale-[1.05] duration-300">
              <img class="h-[50%] w-full rounded-2xl"src=${item.image} alt="">
              <p class="font-bold hover:text-green-700 hover:font-extrabold hover:cursor-pointer">${item.name}</p>
@@ -149,9 +135,9 @@ const displaycatitems = (data) => {
              <button class="btn btn-ghost text-sm rounded-4xl bg-[#15803D] hover:bg-[#FACC15] hover:text-black text-white my-3">Get Involved</button>
           </div>
         `;
-        baxo.append(dibba);
+        baxo.append(bhai);
 
-        const modalClick = dibba.children[0].children[1];
+        const modalClick = bhai.children[0].children[1];
         modalClick.addEventListener("click", () => {
             const my_modal_2 = document.getElementById("my_modal_2");
             my_modal_2.children[0].children[1].innerText = item.name;
@@ -164,7 +150,7 @@ const displaycatitems = (data) => {
             my_modal_2.showModal();
         });
 
-        dibba.children[0].children[4].addEventListener("click", () => {
+        bhai.children[0].children[4].addEventListener("click", () => {
             addchart(item);
         });
     });
@@ -173,8 +159,8 @@ const displaycatitems = (data) => {
 const displaycatitemsall = (data) => {
     const baxo = document.getElementById("catcenter");
     data.forEach(item => {
-        let dibba = document.createElement('div');
-        dibba.innerHTML = `
+        let bhai = document.createElement('div');
+        bhai.innerHTML = `
           <div class="h-[350px] bg-white p-2 flex flex-col hover:shadow-lg hover:scale-[1.05] duration-300">
              <img class="h-[50%] w-full rounded-2xl"src=${item.image} alt="">
              <p class="font-bold hover:text-green-700 hover:font-extrabold hover:cursor-pointer">${item.name}</p>
@@ -186,9 +172,9 @@ const displaycatitemsall = (data) => {
              <button class="btn btn-ghost text-sm rounded-4xl bg-[#15803D] hover:bg-[#FACC15] hover:text-black text-white my-3">Add to Cart</button>
           </div>
         `;
-        baxo.append(dibba);
+        baxo.append(bhai);
 
-        const modalClick = dibba.children[0].children[1];
+        const modalClick = bhai.children[0].children[1];
         modalClick.addEventListener("click", () => {
             const my_modal_2 = document.getElementById("my_modal_2");
             my_modal_2.children[0].children[1].innerText = item.name;
@@ -201,7 +187,7 @@ const displaycatitemsall = (data) => {
             my_modal_2.showModal();
         });
 
-        dibba.children[0].children[4].addEventListener("click", () => {
+        bhai.children[0].children[4].addEventListener("click", () => {
             addchart(item);
         });
     });
