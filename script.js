@@ -120,7 +120,7 @@ const displaycatitems = (data) => {
              <button class="mt-2 bg-[#DCFCE7] text-[#15803D] px-2 text-[10px] rounded-3xl">${item.category}</button>
              <p class="font-bold mt-2">ট ${item.price}</p>
               </div>
-             <button class="btn btn-ghost text-sm rounded-4xl bg-[#15803D] hover:bg-[#FACC15] hover:text-black text-white my-3">Get Involved</button>
+             <button class="btn btn-ghost text-sm rounded-4xl bg-[#15803D] hover:bg-[#FACC15] hover:text-black text-white my-3">Add to cart</button>
           </div>
         `;
         baxo.append(bhai);
